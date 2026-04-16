@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3051195609426920520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531308746768867457}
+  m_Layer: 0
+  m_Name: _Interactibles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531308746768867457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051195609426920520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43872, y: -3.58979, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6867914577236124440}
+  - {fileID: 2778507445054041109}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4879631481869250748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1531308746768867457}
+    m_Modifications:
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018767001957401442, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: m_Name
+      value: PushMagnet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+--- !u!4 &6867914577236124440 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2087511959397454756, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+  m_PrefabInstance: {fileID: 4879631481869250748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6554868426044837132
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1531308746768867457}
+    m_Modifications:
+    - target: {fileID: 3676642038552113631, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_Name
+      value: PullMagnet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+--- !u!4 &2778507445054041109 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8969111993309651225, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
+  m_PrefabInstance: {fileID: 6554868426044837132}
+  m_PrefabAsset: {fileID: 0}
