@@ -1,0 +1,163 @@
+{
+    "friendlyName": "OnePlus 10 Pro",
+    "version": 1,
+    "screens": [
+        {
+            "width": 1440,
+            "height": 3216,
+            "navigationBarHeight": 0,
+            "dpi": 525.0,
+            "orientations": [
+                {
+                    "orientation": 1,
+                    "safeArea": {
+                        "serializedVersion": "2",
+                        "x": 0.0,
+                        "y": 79.0,
+                        "width": 1440.0,
+                        "height": 3137.0
+                    },
+                    "cutouts": [
+                        {
+                            "serializedVersion": "2",
+                            "x": 80.0,
+                            "y": 10.0,
+                            "width": 56.0,
+                            "height": 56.0
+                        }
+                    ]
+                },
+                {
+                    "orientation": 3,
+                    "safeArea": {
+                        "serializedVersion": "2",
+                        "x": 79.0,
+                        "y": 0.0,
+                        "width": 3137.0,
+                        "height": 1440.0
+                    },
+                    "cutouts": [
+                        {
+                            "serializedVersion": "2",
+                            "x": 10.0,
+                            "y": 80.0,
+                            "width": 56.0,
+                            "height": 56.0
+                        }
+                    ]
+                },
+                {
+                    "orientation": 4,
+                    "safeArea": {
+                        "serializedVersion": "2",
+                        "x": 79.0,
+                        "y": 0.0,
+                        "width": 3137.0,
+                        "height": 1440.0
+                    },
+                    "cutouts": [
+                        {
+                            "serializedVersion": "2",
+                            "x": 3080.0,
+                            "y": 80.0,
+                            "width": 56.0,
+                            "height": 56.0
+                        }
+                    ]
+                }
+            ],
+            "presentation": {
+                "overlayPath": "Overlays/OnePlus10Pro.png",
+                "borderSize": {
+                    "x": 48.0,
+                    "y": 40.0,
+                    "z": 48.0,
+                    "w": 40.0
+                }
+            }
+        }
+    ],
+    "systemInfo": {
+        "deviceModel": "OnePlus10Pro",
+        "deviceType": 1,
+        "operatingSystem": "Android 12 (OxygenOS)",
+        "operatingSystemFamily": 0,
+        "processorCount": 8,
+        "processorFrequency": 0,
+        "processorType": "Qualcomm Snapdragon 8 Gen 1",
+        "supportsAccelerometer": true,
+        "supportsAudio": true,
+        "supportsGyroscope": true,
+        "supportsLocationService": true,
+        "supportsVibration": true,
+        "systemMemorySize": 8192,
+        "unsupportedIdentifier": "n/a",
+        "graphicsDependentData": [
+            {
+                "graphicsDeviceType": 11,
+                "graphicsMemorySize": 4096,
+                "graphicsDeviceName": "Adreno 730",
+                "graphicsDeviceVendor": "Qualcomm",
+                "graphicsDeviceID": 0,
+                "graphicsDeviceVendorID": 0,
+                "graphicsUVStartsAtTop": true,
+                "graphicsDeviceVersion": "OpenGL ES 3.2 / Vulkan",
+                "graphicsShaderLevel": 50,
+                "graphicsMultiThreaded": true,
+                "renderingThreadingMode": 0,
+                "hasHiddenSurfaceRemovalOnGPU": true,
+                "hasDynamicUniformArrayIndexingInFragmentShaders": true,
+                "supportsShadows": true,
+                "supportsRawShadowDepthSampling": false,
+                "supportsMotionVectors": true,
+                "supports3DTextures": true,
+                "supports2DArrayTextures": true,
+                "supports3DRenderTextures": true,
+                "supportsCubemapArrayTextures": true,
+                "copyTextureSupport": 31,
+                "supportsComputeShaders": true,
+                "supportsGeometryShaders": false,
+                "supportsTessellationShaders": true,
+                "supportsInstancing": true,
+                "supportsHardwareQuadTopology": false,
+                "supports32bitsIndexBuffer": true,
+                "supportsSparseTextures": false,
+                "supportedRenderTargetCount": 8,
+                "supportsSeparatedRenderTargetsBlend": true,
+                "supportedRandomWriteTargetCount": 8,
+                "supportsMultisampledTextures": 1,
+                "supportsMultisampleAutoResolve": false,
+                "supportsTextureWrapMirrorOnce": 0,
+                "usesReversedZBuffer": true,
+                "npotSupport": 2,
+                "maxTextureSize": 16384,
+                "maxCubemapSize": 16384,
+                "maxComputeBufferInputsVertex": 8,
+                "maxComputeBufferInputsFragment": 8,
+                "maxComputeBufferInputsGeometry": 0,
+                "maxComputeBufferInputsDomain": 8,
+                "maxComputeBufferInputsHull": 8,
+                "maxComputeBufferInputsCompute": 8,
+                "maxComputeWorkGroupSize": 1024,
+                "maxComputeWorkGroupSizeX": 1024,
+                "maxComputeWorkGroupSizeY": 1024,
+                "maxComputeWorkGroupSizeZ": 1024,
+                "supportsAsyncCompute": false,
+                "supportsGraphicsFence": true,
+                "supportsAsyncGPUReadback": true,
+                "supportsParallelPSOCreation": true,
+                "supportsRayTracing": false,
+                "supportsRayTracingShaders": false,
+                "supportsInlineRayTracing": false,
+                "supportsSetConstantBuffer": true,
+                "hasMipMaxLevel": true,
+                "supportsMipStreaming": true,
+                "usesLoadStoreActions": true,
+                "supportedTextureFormats": [1, 2, 3, 4, 5],
+                "supportedRenderTextureFormats": [1, 2, 3, 4, 5],
+                "ldrGraphicsFormat": 59,
+                "hdrGraphicsFormat": 74
+            }
+        ]
+    }
+}
