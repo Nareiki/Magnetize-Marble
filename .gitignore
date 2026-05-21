@@ -128,8 +128,12 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 /[Aa]ssets/kenney_ui-pack
+/[Aa]ssets/Gentleland
+/[Aa]ssets/GentlelandSettings
 /[Aa]ssets/TutorialInfo
 Readme.asset
 Readme.asset.meta
 TutorialInfo.meta
 kenney_ui-pack.meta
+Gentleland.meta
+GentlelandSettings.meta
