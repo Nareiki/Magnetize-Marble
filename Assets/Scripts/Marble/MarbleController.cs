@@ -1,15 +1,12 @@
 using System;
+using Events;
 using UnityEngine;
 
 namespace Marble {
     [RequireComponent(typeof(Rigidbody))]
-    public class MarbleController : MonoBehaviour
-    {
-        
+    public class MarbleController : MonoBehaviour {
         [Header("Settings")]
-        [Tooltip("The amount of drag to apply to the magnet")]
-        
-        [SerializeField] private CubeManager cubeManager;
+        [SerializeField] private VoidEventChannelSo goalReachedEvent;
         
         private Rigidbody _rb;
 
@@ -17,19 +14,15 @@ namespace Marble {
             _rb = GetComponent<Rigidbody>();
         }
 
-        private void Start() {
-            cubeManager = FindFirstObjectByType<CubeManager>();
-            
-        }
-
         public void LaunchFrom(Transform startPoint) {
             transform.position = startPoint.position;
+            transform.rotation = startPoint.rotation;
             
             _rb.linearVelocity = Vector3.zero;
             _rb.angularVelocity = Vector3.zero;
-            
             _rb.position = startPoint.position;
-            transform.position = startPoint.position;
+            
+            //transform.position = startPoint.position;
 
             if (TryGetComponent(out TrailRenderer trailRenderer)) {
                 trailRenderer.Clear();
@@ -38,9 +31,8 @@ namespace Marble {
 
         private void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Goal")) {
-                if (cubeManager) {
-                    cubeManager.CompleteLevelAndRotate();
-                }
+                goalReachedEvent?.Raise();
+                
                 gameObject.SetActive(false);
             }
             else if (other.CompareTag("ResetZone")) {

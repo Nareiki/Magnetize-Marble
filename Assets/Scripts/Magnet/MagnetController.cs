@@ -13,13 +13,17 @@ namespace Magnet {
         [Tooltip("Positive for Push, Negative for Pull")]
         [SerializeField] private float polarity = 1f; 
     
-        private int _currentStrengthLevel = 1;
+        private int _currentStrengthLevel = 0;
 
         private float ActiveMagneticForce => polarity * _currentStrengthLevel * baseMagnetStrength;
 
         private Collider[] _overlappingColliders = new Collider[5];
     
         private void FixedUpdate() {
+            ApplyMagneticForceToSurroundingRigidbodies();
+        }
+
+        private void ApplyMagneticForceToSurroundingRigidbodies() {
             var numCollidersFound = Physics.OverlapSphereNonAlloc(transform.position, magnetRange, _overlappingColliders, affectedLayers);
         
             for (var i = 0; i < numCollidersFound; i++) {
@@ -48,7 +52,7 @@ namespace Magnet {
             _currentStrengthLevel++;
             if (_currentStrengthLevel > 3)
             {
-                _currentStrengthLevel = 1;
+                _currentStrengthLevel = 0;
             }
 
             UpdateVisuals();

@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: cursorOffset.y
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: onMagnetRemoved
+      value: 
+      objectReference: {fileID: 11400000, guid: 093fbdc6d927c44aa81223966ab6651e, type: 2}
     - target: {fileID: 1413883426149970008, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

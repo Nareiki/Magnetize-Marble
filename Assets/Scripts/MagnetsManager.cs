@@ -1,35 +1,75 @@
+using System;
 using System.Collections.Generic;
+using Events;
+using Magnet;
 using UnityEngine;
 
-public class MagnetsManager : MonoBehaviour
-{
+public class MagnetsManager : MonoBehaviour {
+    [Header("Events")] [SerializeField] private GameObjectEventChannelSo onMagnetCreated;
+    [SerializeField] private GameObjectEventChannelSo onMagnetRemoved;
+    [SerializeField] private VoidEventChannelSo magnetsClearedEvent;
+    
     [Header("Placement Settings")]
     [Tooltip("How far from the center of the world should the magnets sit?")]
     [SerializeField] private float zDepth = -9.9f;
+    [SerializeField] private GameObject magnetRootComponent;
     
     private BoxCollider _activeLevelBounds;
     private Camera _mainCam;
     
     private List<GameObject> _activeMagnets = new List<GameObject>();
 
-    void Start() {
-        _mainCam = Camera.main;
+    private void OnEnable() {
+        if (!onMagnetCreated) return;
+        onMagnetCreated.OnRaised += HandleMagnetCreated;
+        
+        if (!onMagnetRemoved) return;
+        onMagnetRemoved.OnRaised += HandleMagnetRemoved;
+    }
+    
+    private void OnDisable() {
+        if (!onMagnetCreated) return;
+        onMagnetCreated.OnRaised -= HandleMagnetCreated;
+        
+        if (!onMagnetRemoved) return;
+        onMagnetRemoved.OnRaised -= HandleMagnetRemoved;
     }
 
-    public void SetNewBounds(BoxCollider newBounds) {
+    private void Start() {
+        _mainCam = Camera.main;
+        if (!magnetRootComponent) return;
+        
+        foreach (var child in magnetRootComponent.GetComponentsInChildren<MagnetController>()) {
+            _activeMagnets.Add(child.gameObject);
+        }
+    }
+
+    private void HandleMagnetCreated(GameObject magnet) {
+        RegisterMagnet(magnet);
+    }
+
+    private void HandleMagnetRemoved(GameObject magnet) {
+        RemoveMagnet(magnet);
+    }
+    
+
+    public void SetDragZone(BoxCollider newBounds) {
         _activeLevelBounds = newBounds;
     }
 
     public void ClearAllMagnets() {
-        for (int i = _activeMagnets.Count - 1; i >= 0; i--) {
+        for (var i = _activeMagnets.Count - 1; i >= 0; i--) {
             if (_activeMagnets[i]) {
                 Destroy( _activeMagnets[i] );
             }
         }
         _activeMagnets.Clear();
+        magnetsClearedEvent?.Raise();
     }
     
     public void RegisterMagnet(GameObject magnet) {
+        magnet.transform.SetParent(magnetRootComponent.transform);
+        
         if (!_activeMagnets.Contains(magnet))
         {
             _activeMagnets.Add(magnet);
@@ -37,6 +77,8 @@ public class MagnetsManager : MonoBehaviour
     }
 
     public void RemoveMagnet(GameObject magnet) {
+        if (magnet == null) return;
+        
         if (!_activeMagnets.Contains(magnet)) return;
         
         _activeMagnets.Remove(magnet);
@@ -54,9 +96,9 @@ public class MagnetsManager : MonoBehaviour
 
         if (placementPlane.Raycast(ray, out float distance))
         {
-            Vector3 worldPoint = ray.GetPoint(distance);
+            var worldPoint = ray.GetPoint(distance);
 
-            Bounds b = _activeLevelBounds.bounds;
+            var b = _activeLevelBounds.bounds;
             worldPoint.x = Mathf.Clamp(worldPoint.x, b.min.x, b.max.x);
             worldPoint.y = Mathf.Clamp(worldPoint.y, b.min.y, b.max.y);
             worldPoint.z = Mathf.Clamp(worldPoint.z, b.min.z, b.max.z);

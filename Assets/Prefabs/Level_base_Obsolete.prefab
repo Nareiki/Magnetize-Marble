@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906990445958001328}
   m_Layer: 0
-  m_Name: Level_base
+  m_Name: Level_base_Obsolete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

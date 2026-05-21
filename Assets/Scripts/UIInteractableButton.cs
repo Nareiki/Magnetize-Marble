@@ -1,16 +1,21 @@
+using Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class UIInteractableButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     [Header("References")] 
-    [SerializeField] private MagnetsManager magnetManager;
     [SerializeField] private GameObject magnetPrefab;
+
+    [Header("Events")] 
+    [SerializeField] private GameObjectEventChannelSo onMagnetCreated;
+    [SerializeField] private GameObjectEventChannelSo onMagnetRemoved;
+    
     private GameObject _activeMagnet;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         _activeMagnet = Instantiate(magnetPrefab);
-        magnetManager.RegisterMagnet(_activeMagnet);
+        onMagnetCreated?.Raise(_activeMagnet);
         UpdateMagnetPosition(eventData.position);
     }
 
@@ -22,19 +27,24 @@ public class UIInteractableButton : MonoBehaviour, IBeginDragHandler, IDragHandl
         }
     }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        _activeMagnet = null;
+    public void OnEndDrag(PointerEventData eventData) {
+        if (!_activeMagnet) return; 
+        if (eventData.pointerEnter != null && eventData.pointerEnter.CompareTag("RemoveInteractable"))
         {
-            magnetManager.RemoveMagnet(_activeMagnet);
-            _activeMagnet = null;
+            onMagnetRemoved?.Raise(_activeMagnet);
         }
+        
+        _activeMagnet = null;
     }
 
     private void UpdateMagnetPosition(Vector2 screenPos)
     {
+        var magnetManager = FindFirstObjectByType<MagnetsManager>();
+        if (magnetManager == null) return;
+
         var newPosition = magnetManager.GetClampedWorldPos(screenPos);
-        if (newPosition != Vector3.zero) {
+        if (newPosition != Vector3.zero && _activeMagnet)
+        {
             _activeMagnet.transform.position = newPosition;
         }
     }
