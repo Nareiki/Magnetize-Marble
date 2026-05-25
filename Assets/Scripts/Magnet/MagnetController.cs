@@ -1,9 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Magnet {
     public class MagnetController : MonoBehaviour, IPointerClickHandler {
-    
         [Header("Physics Settings")]
         [SerializeField] private float baseMagnetStrength = 10f;
         [SerializeField] private float magnetRange = 5f;
@@ -13,7 +13,11 @@ namespace Magnet {
         [Tooltip("Positive for Push, Negative for Pull")]
         [SerializeField] private float polarity = 1f; 
     
-        private int _currentStrengthLevel = 0;
+        public event Action<int> OnStrengthLevelChanged;
+        
+        private int _currentStrengthLevel = 1;
+        
+        public int CurrentStrengthLevel => _currentStrengthLevel;
 
         private float ActiveMagneticForce => polarity * _currentStrengthLevel * baseMagnetStrength;
 
@@ -55,7 +59,8 @@ namespace Magnet {
                 _currentStrengthLevel = 0;
             }
 
-            UpdateVisuals();
+            OnStrengthLevelChanged?.Invoke(_currentStrengthLevel);
+            //UpdateVisuals();
         }
 
         private void UpdateVisuals()
