@@ -60,6 +60,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Mode: 0
+    - _Smoothness: 0.25
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
