@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Events;
@@ -10,6 +11,8 @@ namespace Managers {
     
         [Header("Events")]
         [SerializeField] private VoidEventChannelSo goalReachedEvent;
+        [SerializeField] private VoidEventChannelSo simulationStartedEvent;
+        [SerializeField] private VoidEventChannelSo simulationStoppedEvent;
 
         [Header("Optional Config")] 
         [SerializeField] private CubeLevelSo levelConfig;
@@ -30,6 +33,7 @@ namespace Managers {
     
         private int _currentFaceIndex = 0;
         private bool _isRotating = false;
+        private bool _isSimulating = false;
     
         private float RotationAngle => levelConfig != null ? levelConfig.rotationAngle : 0;
 
@@ -70,7 +74,7 @@ namespace Managers {
             _faces.Clear();
         
             foreach (var baseObj in levelBases) {
-                if (baseObj == null) return;
+                if (baseObj == null) continue;
             
                 var dragZone = baseObj.GetComponentInChildren<DragZone>();
                 var startPoint = baseObj.GetComponentInChildren<StartPoint>();
@@ -97,22 +101,35 @@ namespace Managers {
     
         [ContextMenu("Begin Simulation")]
         public void StartSimulation() {
-            if (_isRotating || !marbleController) {
+            if (_isRotating || _isSimulating || !marbleController) {
                 return;
             }
 
-            if (_currentFaceIndex >= _faces.Count) return;
+            if (_currentFaceIndex >= _faces.Count) {
+                return;
+            }
         
-        
+            _isSimulating = true;
         
             marbleController.gameObject.SetActive(true);
             marbleController.LaunchFrom(_faces[_currentFaceIndex].startPoint);
+            
+            simulationStartedEvent?.Raise();
         }
+        
         [ContextMenu("Stop Simulation")]
         public void StopSimulation() {
+            if (!_isSimulating) {
+                return;
+            }
+            
+            _isSimulating = false;
+            
             if (marbleController) {
                 marbleController.gameObject.SetActive(false);
             }
+            
+            simulationStoppedEvent?.Raise();
         }
 
         private void HandleGoalReached() {
@@ -124,14 +141,18 @@ namespace Managers {
             if (_isRotating) {
                 return;
             }
+            
+            StopSimulation();
 
             _currentFaceIndex++;
 
-            if (_currentFaceIndex < levelBases.Count) {
+            if (_currentFaceIndex < _faces.Count && magnetManager) {
                 StartCoroutine(RotateCubeRoutine());
             }
             else {
                 Debug.Log("Escape Room Completed!");
+                
+                simulationStoppedEvent?.Raise();
             }
         }
 
