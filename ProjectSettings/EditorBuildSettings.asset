@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d93d9388e029640a7a7bce20dfbbc330
+  - enabled: 1
+    path: Assets/Scenes/SettingsMenu.unity
+    guid: cdd7f99b9699d4b83a00cfaa06f6a69f
+  - enabled: 1
+    path: Assets/Scenes/CreditsMenu.unity
+    guid: 543bc88ac701e42f69d15a033040b18c
+  - enabled: 1
     path: Assets/Scenes/MarbleTestScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
