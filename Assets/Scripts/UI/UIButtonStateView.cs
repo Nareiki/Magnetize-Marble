@@ -10,10 +10,26 @@ namespace UI {
         [Header("Animation Config")]
         [Tooltip("Optional: The animator component attached to this button frame or child.")]
         [SerializeField] private Animator buttonAnimator;
+        
+        [Header("Drag Hover Visuals")]
+        [Tooltip("The sprite used when a magnet is actively being dragged by the player.")]
+        [SerializeField] private Sprite activeTrashHoverSprite;
+        [Tooltip("A highlight color applied when an item is held over or ready to drop.")]
+        [SerializeField] private Color heldHighlightColor = Color.white;
+        
+        [Header("Group Settings")]
+        [Tooltip("The Canvas Group component attached to this button frame.")]
+        [SerializeField] private CanvasGroup canvasGroup;
 
         private void Awake() {
             if (innerIconGraphic == null) {
                 innerIconGraphic = GetComponentInChildren<Graphic>();
+            }
+            if (buttonAnimator == null) {
+                buttonAnimator = GetComponent<Animator>();
+            }
+            if (canvasGroup == null) {
+                canvasGroup = GetComponent<CanvasGroup>();
             }
         }
 
@@ -30,12 +46,35 @@ namespace UI {
         }
         
         public void ToggleAnimations(bool enable) {
-            if (buttonAnimator != null) {
+            if (buttonAnimator) {
                 buttonAnimator.enabled = enable;
                 
                 if (!enable) {
                     buttonAnimator.Rebind();
                 }
+            }
+        }
+        
+        public void SetInteractable(bool isInteractable, float targetAlpha = 1.0f) {
+            if (!canvasGroup) return;
+            
+            canvasGroup.interactable = isInteractable;
+            canvasGroup.blocksRaycasts = isInteractable;
+            canvasGroup.alpha = targetAlpha;
+        }
+        
+        public void SetDragHoverState(bool isItemInHand, bool allowAnimatorPulse) {
+            if (isItemInHand) {
+                if (activeTrashHoverSprite) {
+                    SetIconSprite(activeTrashHoverSprite);
+                }
+                SetIconColor(heldHighlightColor);
+            } else {
+                SetIconColor(Color.white);
+            }
+
+            if (buttonAnimator && buttonAnimator.enabled) {
+                buttonAnimator.SetBool("IsTargetActive", isItemInHand && allowAnimatorPulse);
             }
         }
     }

@@ -13,6 +13,7 @@ namespace Interactables {
         [SerializeField] private GameObjectEventChannelSo onMagnetRemoved;
         [SerializeField] private VoidEventChannelSo onSimulationStart;
         [SerializeField] private VoidEventChannelSo onSimulationEnd;
+        [SerializeField] private BoolEventChannelSo onMagnetDragStateChanged;
     
         private GameObject _activeMagnet;
         private bool _spawningEnabled = true;
@@ -57,6 +58,10 @@ namespace Interactables {
         {
             if (!_spawningEnabled || !_magnetManager || _currentPointerId != -1) return;
             
+            if (onMagnetDragStateChanged != null) {
+                onMagnetDragStateChanged?.Raise(true);
+            }
+            
             _currentPointerId = eventData.pointerId;
             
             _activeMagnet = Instantiate(magnetPrefab);
@@ -80,6 +85,10 @@ namespace Interactables {
         public void OnEndDrag(PointerEventData eventData) {
             if (eventData.pointerId != _currentPointerId) {
                 return;
+            }
+            
+            if (onMagnetDragStateChanged != null) {
+                onMagnetDragStateChanged?.Raise(false);
             }
             
             if (!_activeMagnet) {

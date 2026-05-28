@@ -13,6 +13,7 @@ namespace Managers {
         [SerializeField] private VoidEventChannelSo goalReachedEvent;
         [SerializeField] private VoidEventChannelSo simulationStartedEvent;
         [SerializeField] private VoidEventChannelSo simulationStoppedEvent;
+        [SerializeField] private VoidEventChannelSo resetZoneEvent;
 
         [Header("Optional Config")] 
         [SerializeField] private CubeLevelSo levelConfig;
@@ -49,11 +50,19 @@ namespace Managers {
             if (goalReachedEvent != null) {
                 goalReachedEvent.OnRaised += HandleGoalReached;
             }
+
+            if (resetZoneEvent != null) {
+                resetZoneEvent.OnRaised += StopSimulation;
+            }
         }
     
         private void OnDisable() {
             if (goalReachedEvent != null) {
                 goalReachedEvent.OnRaised -= HandleGoalReached;
+            }
+            
+            if (resetZoneEvent != null) {
+                resetZoneEvent.OnRaised -= StopSimulation;
             }
         }
 

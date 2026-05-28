@@ -15,6 +15,7 @@ namespace Interactables {
         [SerializeField] private GameObjectEventChannelSo onMagnetRemoved;
         [SerializeField] private VoidEventChannelSo onSimulationStart;
         [SerializeField] private VoidEventChannelSo onSimulationEnd;
+        [SerializeField] private BoolEventChannelSo onMagnetDragStateChanged;
 
     
         private bool _isDragging;
@@ -77,6 +78,11 @@ namespace Interactables {
             }
             _isDragging = true;
             _currentPointerId = eventData.pointerId;
+
+            if (onMagnetDragStateChanged != null) {
+                onMagnetDragStateChanged?.Raise(true);
+            }
+            
             //_startPosition = transform.position;
             //TODO: Sound Effects could go here (like a 'pickup' sound)
         }
@@ -97,6 +103,12 @@ namespace Interactables {
         public void OnEndDrag(PointerEventData eventData) {
             if (eventData.pointerId != _currentPointerId) {
                 return;
+            }
+
+            if (eventData.pointerId == _currentPointerId) {
+                if (onMagnetDragStateChanged != null) {
+                    onMagnetDragStateChanged?.Raise(false);
+                }
             }
             
             _isDragging = false;

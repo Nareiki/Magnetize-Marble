@@ -54,7 +54,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7483777239320015596
 MonoBehaviour:
@@ -91,6 +91,7 @@ MonoBehaviour:
   onMagnetRemoved: {fileID: 11400000, guid: 093fbdc6d927c44aa81223966ab6651e, type: 2}
   onSimulationStart: {fileID: 11400000, guid: 432110008e38a4bd39a13718dd9e74eb, type: 2}
   onSimulationEnd: {fileID: 11400000, guid: 9948ab1d0c158418189ac84d02e9daec, type: 2}
+  onMagnetDragStateChanged: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
 --- !u!1001 &6329358267091599987
 PrefabInstance:
   m_ObjectHideFlags: 0
