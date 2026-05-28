@@ -109,6 +109,31 @@ MonoBehaviour:
   - 0
   - -95
   - 177
+  rotationDuration: 0.2
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   activatedMaterial: {fileID: 2100000, guid: c3c88035c47336f46bc75ae2e7f94ec8, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 3399303bb86f7394c80d929bb09a2468, type: 2}
 --- !u!4 &4804185991678711199 stripped
@@ -141,6 +166,18 @@ PrefabInstance:
       propertyPath: onMagnetRemoved
       value: 
       objectReference: {fileID: 11400000, guid: 093fbdc6d927c44aa81223966ab6651e, type: 2}
+    - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: onSimulationEnd
+      value: 
+      objectReference: {fileID: 11400000, guid: 9948ab1d0c158418189ac84d02e9daec, type: 2}
+    - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: onSimulationStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 432110008e38a4bd39a13718dd9e74eb, type: 2}
+    - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: onMagnetDragStateChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
     - target: {fileID: 1413883426149970008, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -216,6 +253,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4612980089080093442, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
     - {fileID: 1413883426149970008, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 4900942470072320185, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
     m_AddedGameObjects:

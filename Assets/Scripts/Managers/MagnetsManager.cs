@@ -19,6 +19,8 @@ namespace Managers {
     
         private List<GameObject> _activeMagnets = new List<GameObject>();
 
+        private Plane _placementPlane;
+
         private void OnEnable() {
             if (!onMagnetCreated) return;
             onMagnetCreated.OnRaised += HandleMagnetCreated;
@@ -37,10 +39,15 @@ namespace Managers {
 
         private void Start() {
             _mainCam = Camera.main;
+            _placementPlane = new Plane(Vector3.forward, new Vector3(0, 0, zDepth));
+            
             if (!magnetRootComponent) return;
         
-            foreach (var child in magnetRootComponent.GetComponentsInChildren<MagnetController>()) {
-                _activeMagnets.Add(child.gameObject);
+            foreach (Transform child in magnetRootComponent.transform) {
+                if (!_activeMagnets.Contains(child.gameObject))
+                {
+                    _activeMagnets.Add(child.gameObject);
+                }
             }
         }
 
@@ -91,21 +98,34 @@ namespace Managers {
                 return Vector3.zero;
             }
         
-            var placementPlane = new Plane(Vector3.forward, new Vector3(0, 0, zDepth));
             var ray = _mainCam.ScreenPointToRay(screenPosition);
 
-            if (placementPlane.Raycast(ray, out float distance))
+            if (_placementPlane.Raycast(ray, out var distance))
             {
                 var worldPoint = ray.GetPoint(distance);
 
-                var b = _activeLevelBounds.bounds;
-                worldPoint.x = Mathf.Clamp(worldPoint.x, b.min.x, b.max.x);
-                worldPoint.y = Mathf.Clamp(worldPoint.y, b.min.y, b.max.y);
-                worldPoint.z = Mathf.Clamp(worldPoint.z, b.min.z, b.max.z);
+                var bounds = _activeLevelBounds.bounds;
+                worldPoint.x = Mathf.Clamp(worldPoint.x, bounds.min.x, bounds.max.x);
+                worldPoint.y = Mathf.Clamp(worldPoint.y, bounds.min.y, bounds.max.y);
+                worldPoint.z = Mathf.Clamp(worldPoint.z, bounds.min.z, bounds.max.z);
             
                 return worldPoint;
             }
             return Vector3.zero;
+        }
+        
+        public void UpdateObjectPositionToCursor(GameObject obj, Vector2 screenPosition, Vector2 pixelOffset, bool instantSnap)
+        {
+            var combinedCoords = screenPosition + pixelOffset;
+            var targetWorldPos = GetClampedWorldPos(combinedCoords);
+
+            if (targetWorldPos != Vector3.zero)
+            {
+                if (instantSnap) {
+                    obj.transform.position = targetWorldPos;
+                }
+                // If we want managers to handle smooth updates directly later on, we can scale here!
+            }
         }
     }
 }

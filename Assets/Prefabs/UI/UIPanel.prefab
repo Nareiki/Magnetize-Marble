@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1282072137524315246}
   - component: {fileID: 7967684911527940656}
   - component: {fileID: 2810228087196822603}
+  - component: {fileID: 3933261038950982674}
+  - component: {fileID: 8583617752093282324}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: RemoveInteractable
@@ -156,6 +158,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3933261038950982674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417858692686193697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
+  innerIconGraphic: {fileID: 2009130152682415977}
+  buttonAnimator: {fileID: 2810228087196822603}
+  activeTrashHoverSprite: {fileID: 0}
+  heldHighlightColor: {r: 1, g: 1, b: 1, a: 1}
+  canvasGroup: {fileID: 0}
+--- !u!225 &8583617752093282324
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417858692686193697}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2141363360360888965
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +198,7 @@ GameObject:
   - component: {fileID: 1677978317289775169}
   - component: {fileID: 504219083429447197}
   - component: {fileID: 6944308317003815101}
+  - component: {fileID: 8931168379097095270}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -190,7 +222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &504219083429447197
@@ -228,6 +260,23 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &8931168379097095270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141363360360888965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
+  innerIconGraphic: {fileID: 0}
+  buttonAnimator: {fileID: 0}
+  activeTrashHoverSprite: {fileID: 0}
+  heldHighlightColor: {r: 1, g: 1, b: 1, a: 1}
+  canvasGroup: {fileID: 0}
 --- !u!1 &2514094139237843058
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,8 +311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1366692259574456098
 CanvasRenderer:
@@ -338,7 +387,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8530417746740054879
 CanvasRenderer:
@@ -412,7 +461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6923545354652193473
@@ -464,6 +513,8 @@ GameObject:
   - component: {fileID: 7821485327229216878}
   - component: {fileID: 7675996475419902018}
   - component: {fileID: 4128241904407959420}
+  - component: {fileID: 1096932020511730208}
+  - component: {fileID: 6448805821578053615}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -610,6 +661,38 @@ MonoBehaviour:
   magnetPrefab: {fileID: 6018767001957401442, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
   onMagnetCreated: {fileID: 11400000, guid: 6ccce5f217daf4f3090c8d8b2c55cd8f, type: 2}
   onMagnetRemoved: {fileID: 11400000, guid: 093fbdc6d927c44aa81223966ab6651e, type: 2}
+  onSimulationStart: {fileID: 11400000, guid: 432110008e38a4bd39a13718dd9e74eb, type: 2}
+  onSimulationEnd: {fileID: 11400000, guid: 9948ab1d0c158418189ac84d02e9daec, type: 2}
+  onMagnetDragStateChanged: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
+--- !u!114 &1096932020511730208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746675736008206172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
+  innerIconGraphic: {fileID: 6944308317003815101}
+  buttonAnimator: {fileID: 7675996475419902018}
+  activeTrashHoverSprite: {fileID: 0}
+  heldHighlightColor: {r: 1, g: 1, b: 1, a: 1}
+  canvasGroup: {fileID: 0}
+--- !u!225 &6448805821578053615
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746675736008206172}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5839574842072325043
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +707,8 @@ GameObject:
   - component: {fileID: 7454784632816791529}
   - component: {fileID: 1846222914034356000}
   - component: {fileID: 2682801024537911480}
+  - component: {fileID: 7389541569082331430}
+  - component: {fileID: 2500934591537416542}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -770,6 +855,38 @@ MonoBehaviour:
   magnetPrefab: {fileID: 3676642038552113631, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
   onMagnetCreated: {fileID: 11400000, guid: 6ccce5f217daf4f3090c8d8b2c55cd8f, type: 2}
   onMagnetRemoved: {fileID: 11400000, guid: 093fbdc6d927c44aa81223966ab6651e, type: 2}
+  onSimulationStart: {fileID: 11400000, guid: 432110008e38a4bd39a13718dd9e74eb, type: 2}
+  onSimulationEnd: {fileID: 11400000, guid: 9948ab1d0c158418189ac84d02e9daec, type: 2}
+  onMagnetDragStateChanged: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
+--- !u!114 &7389541569082331430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839574842072325043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
+  innerIconGraphic: {fileID: 8537528007709427657}
+  buttonAnimator: {fileID: 1846222914034356000}
+  activeTrashHoverSprite: {fileID: 0}
+  heldHighlightColor: {r: 1, g: 1, b: 1, a: 1}
+  canvasGroup: {fileID: 0}
+--- !u!225 &2500934591537416542
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839574842072325043}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6988950317926646386
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -858,6 +975,8 @@ GameObject:
   - component: {fileID: 2232170184722518597}
   - component: {fileID: 461591988740995580}
   - component: {fileID: 1455698316954508689}
+  - component: {fileID: 3348746898974452935}
+  - component: {fileID: 7384030430172275941}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1001,6 +1120,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3348746898974452935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455855885431896016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
+  innerIconGraphic: {fileID: 5941738294166785555}
+  buttonAnimator: {fileID: 1455698316954508689}
+  activeTrashHoverSprite: {fileID: 0}
+  heldHighlightColor: {r: 1, g: 1, b: 1, a: 1}
+  canvasGroup: {fileID: 0}
+--- !u!225 &7384030430172275941
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455855885431896016}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9135943533828342281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1174,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9135943533828342281}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1065,7 +1213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

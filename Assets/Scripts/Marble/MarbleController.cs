@@ -7,6 +7,7 @@ namespace Marble {
     public class MarbleController : MonoBehaviour {
         [Header("Settings")]
         [SerializeField] private VoidEventChannelSo goalReachedEvent;
+        [SerializeField] private VoidEventChannelSo resetZoneEvent;
         
         private Rigidbody _rb;
 
@@ -36,6 +37,8 @@ namespace Marble {
                 gameObject.SetActive(false);
             }
             else if (other.CompareTag("ResetZone")) {
+                resetZoneEvent?.Raise();
+                
                 gameObject.SetActive(false);
             }
         }
