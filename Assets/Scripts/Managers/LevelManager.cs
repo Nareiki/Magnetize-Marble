@@ -20,6 +20,7 @@ namespace Managers {
         [Header("Cube References")] 
         [SerializeField] private Transform wholeCube;
         [SerializeField] private List<GameObject> levelBases;
+        [SerializeField] private List<GameObject> modelBases;
         //[SerializeField] private List<BoxCollider> dragZones;
         //[SerializeField] private List<Transform> faceStartPoints;
 
@@ -71,6 +72,8 @@ namespace Managers {
             if (marbleController) {
                 marbleController.gameObject.SetActive(false);
             }
+            
+            InitializeFaceVisibility();
         
             // Define starting bounds
             if (magnetManager && _faces.Count > 0) {
@@ -140,23 +143,35 @@ namespace Managers {
             
             simulationStoppedEvent?.Raise();
         }
+        
+        private void InitializeFaceVisibility() {
+            for (var i = 0; i < _faces.Count; i++) {
+                if (_faces[i].baseObject != null) {
+                    // Only face 0 starts enabled; others are completely culled
+                    _faces[i].baseObject.SetActive(i == 0);
+                    modelBases[i].SetActive(i == 0);
+                }
+            }
+        }
 
         private void HandleGoalReached() {
             CompleteLevelAndRotate();
         }
 
         [ContextMenu("Complete Level & Rotate")]
-        public void CompleteLevelAndRotate() {
+        private void CompleteLevelAndRotate() {
             if (_isRotating) {
                 return;
             }
             
             StopSimulation();
+            
+            int oldFaceIndex = _currentFaceIndex;
 
             _currentFaceIndex++;
 
             if (_currentFaceIndex < _faces.Count && magnetManager) {
-                StartCoroutine(RotateCubeRoutine());
+                StartCoroutine(RotateCubeRoutine(oldFaceIndex));
             }
             else {
                 Debug.Log("Escape Room Completed!");
@@ -164,12 +179,17 @@ namespace Managers {
                 simulationStoppedEvent?.Raise();
             }
         }
-
-        private IEnumerator RotateCubeRoutine() {
+        
+        private IEnumerator RotateCubeRoutine(int previousFaceIndex) {
             _isRotating = true;
 
             if (magnetManager) {
                 magnetManager.ClearAllMagnets();
+            }
+            
+            if (_currentFaceIndex < _faces.Count) {
+                _faces[_currentFaceIndex].baseObject.SetActive(true);
+                modelBases[_currentFaceIndex].SetActive(true);
             }
         
             var startRotation = wholeCube.rotation;
@@ -189,6 +209,11 @@ namespace Managers {
             }
 
             wholeCube.rotation = endRotation;
+            
+            if (previousFaceIndex >= 0 && previousFaceIndex < _faces.Count) {
+                _faces[previousFaceIndex].baseObject.SetActive(false);
+                modelBases[previousFaceIndex].SetActive(false);
+            }
 
             if (_currentFaceIndex < _faces.Count && magnetManager) {
                 magnetManager.SetDragZone(_faces[_currentFaceIndex].dragZone);
