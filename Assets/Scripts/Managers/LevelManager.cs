@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Events;
@@ -32,9 +31,9 @@ namespace Managers {
         [SerializeField] private float rotationDuration = 1.5f;
         [SerializeField] private AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     
-        private int _currentFaceIndex = 0;
-        private bool _isRotating = false;
-        private bool _isSimulating = false;
+        private int _currentFaceIndex;
+        private bool _isRotating;
+        private bool _isSimulating ;
     
         private float RotationAngle => levelConfig != null ? levelConfig.rotationAngle : 0;
 
@@ -76,6 +75,7 @@ namespace Managers {
             // Define starting bounds
             if (magnetManager && _faces.Count > 0) {
                 magnetManager.SetDragZone(_faces[_currentFaceIndex].dragZone);
+                magnetManager.UpdateZDepth(_currentFaceIndex);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Managers {
     
         [ContextMenu("Begin Simulation")]
         public void StartSimulation() {
-            if (_isRotating || _isSimulating || !marbleController) {
+            if (_isRotating || !marbleController) {
                 return;
             }
 
@@ -192,6 +192,7 @@ namespace Managers {
 
             if (_currentFaceIndex < _faces.Count && magnetManager) {
                 magnetManager.SetDragZone(_faces[_currentFaceIndex].dragZone);
+                magnetManager.UpdateZDepth(_currentFaceIndex);
             }
 
             _isRotating = false;

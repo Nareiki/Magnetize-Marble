@@ -1847,7 +1847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1539819248 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e750e2ee7e85b8b41b32c1f079bd4b0b, type: 3}
+  m_CorrespondingSourceObject: {fileID: -8793683779470367408, guid: e750e2ee7e85b8b41b32c1f079bd4b0b, type: 3}
   m_PrefabInstance: {fileID: 259952800}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1603387988
@@ -2781,14 +2781,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 446611121}
     m_Modifications:
-    - target: {fileID: 1038951069489892618, guid: 5c240754985734cadbfa379835734a79, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1166742682087896030, guid: 5c240754985734cadbfa379835734a79, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1531308746768867457, guid: 5c240754985734cadbfa379835734a79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2832,10 +2824,6 @@ PrefabInstance:
     - target: {fileID: 3051195609426920520, guid: 5c240754985734cadbfa379835734a79, type: 3}
       propertyPath: m_Name
       value: _Interactibles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7634054843421244627, guid: 5c240754985734cadbfa379835734a79, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2919,10 +2907,6 @@ PrefabInstance:
       propertyPath: startResetButtonView
       value: 
       objectReference: {fileID: 544594799}
-    - target: {fileID: 2171002914944560157, guid: de907ac47ede6457f9b80164635411ee, type: 3}
-      propertyPath: onMagnetDragStateChanged
-      value: 
-      objectReference: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
     - target: {fileID: 2171002914944560157, guid: de907ac47ede6457f9b80164635411ee, type: 3}
       propertyPath: 'magnetSpawnViews.Array.data[0]'
       value: 

@@ -13,6 +13,18 @@ PrefabInstance:
       value: Blue_Magnet
       objectReference: {fileID: 0}
     - target: {fileID: 3097218424202819323, guid: f1cbc034f2e417f4388b7cce1338171e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097218424202819323, guid: f1cbc034f2e417f4388b7cce1338171e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097218424202819323, guid: f1cbc034f2e417f4388b7cce1338171e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097218424202819323, guid: f1cbc034f2e417f4388b7cce1338171e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -159,8 +171,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
+      propertyPath: cursorOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
       propertyPath: cursorOffset.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2559181049266844382, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
       propertyPath: onMagnetRemoved
@@ -236,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5610630284947242422, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
       propertyPath: m_Radius
-      value: 1
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 6018767001957401442, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
       propertyPath: m_Name

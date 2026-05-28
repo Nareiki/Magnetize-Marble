@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.LevelUIManager
   simulationStartedEvent: {fileID: 11400000, guid: 432110008e38a4bd39a13718dd9e74eb, type: 2}
   simulationStoppedEvent: {fileID: 11400000, guid: 9948ab1d0c158418189ac84d02e9daec, type: 2}
+  onMagnetDragStateChanged: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
   trashStopButtonView: {fileID: 0}
   trashCanSprite: {fileID: 2071443655879868920, guid: 9a3cb6f6c7a1241be9e1cda777993466, type: 3}
   stopSimulationSprite: {fileID: -363539770308219252, guid: 74900e5ad099248d28c092416df8d8f2, type: 3}
@@ -57,3 +58,5 @@ MonoBehaviour:
   - {fileID: 0}
   activeColor: {r: 1, g: 1, b: 1, a: 1}
   disabledColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.5}
+  disabledAlpha: 0.4
+  enabledAlpha: 1

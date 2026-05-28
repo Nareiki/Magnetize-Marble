@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Events;
-using Magnet;
 using UnityEngine;
 
 namespace Managers {
@@ -11,7 +10,7 @@ namespace Managers {
     
         [Header("Placement Settings")]
         [Tooltip("How far from the center of the world should the magnets sit?")]
-        [SerializeField] private float zDepth = -9.9f;
+        [SerializeField] private float[] zDepth = {-9.9f, -9f, -9.9f, -9f};
         [SerializeField] private GameObject magnetRootComponent;
     
         private BoxCollider _activeLevelBounds;
@@ -20,6 +19,8 @@ namespace Managers {
         private List<GameObject> _activeMagnets = new List<GameObject>();
 
         private Plane _placementPlane;
+        
+        [SerializeField] private float _currentZDepth;
 
         private void OnEnable() {
             if (!onMagnetCreated) return;
@@ -39,7 +40,8 @@ namespace Managers {
 
         private void Start() {
             _mainCam = Camera.main;
-            _placementPlane = new Plane(Vector3.forward, new Vector3(0, 0, zDepth));
+            
+            _placementPlane = new Plane(Vector3.forward, new Vector3(0, 0, _currentZDepth));
             
             if (!magnetRootComponent) return;
         
@@ -58,7 +60,13 @@ namespace Managers {
         private void HandleMagnetRemoved(GameObject magnet) {
             RemoveMagnet(magnet);
         }
-    
+
+        public void UpdateZDepth(int newZDepth) {
+            if (newZDepth < zDepth.Length) {
+                _currentZDepth = zDepth[newZDepth];
+                _placementPlane = new Plane(Vector3.forward, new Vector3(0, 0, _currentZDepth));
+            }
+        }
 
         public void SetDragZone(BoxCollider newBounds) {
             _activeLevelBounds = newBounds;
@@ -124,7 +132,6 @@ namespace Managers {
                 if (instantSnap) {
                     obj.transform.position = targetWorldPos;
                 }
-                // If we want managers to handle smooth updates directly later on, we can scale here!
             }
         }
     }
