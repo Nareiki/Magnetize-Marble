@@ -31,6 +31,9 @@ namespace Managers {
         [Header("Animation Settings")]
         [SerializeField] private float rotationDuration = 1.5f;
         [SerializeField] private AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        
+        [Header("Final Animation Animator")]
+        [SerializeField] private Animator finalAnimationAnimator;
     
         private int _currentFaceIndex;
         private bool _isRotating;
@@ -175,7 +178,7 @@ namespace Managers {
             }
             else {
                 Debug.Log("Escape Room Completed!");
-                
+                finalAnimationAnimator.SetTrigger("TriggerFinish");
                 simulationStoppedEvent?.Raise();
             }
         }
