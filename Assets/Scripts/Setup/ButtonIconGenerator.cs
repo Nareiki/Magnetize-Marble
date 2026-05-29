@@ -14,6 +14,7 @@ namespace Setup {
         
         [SerializeField] private List<ButtonData> buttonList;
         [SerializeField] private Camera studioCamera;
+        [SerializeField] private Light studioLight;
         [SerializeField] private Transform spawnPoint;
         
         void Start() {
@@ -43,19 +44,19 @@ namespace Setup {
             studioCamera.gameObject.SetActive(false);
         }
         
-        IEnumerator ProcessIconsRoutine()
+        private IEnumerator ProcessIconsRoutine()
         {
-            RenderTexture rt = studioCamera.targetTexture;
+            var rt = studioCamera.targetTexture;
 
             foreach (var item in buttonList)
             {
-                GameObject model = Instantiate(item.prefab, spawnPoint.position, spawnPoint.rotation);
+                var model = Instantiate(item.prefab, spawnPoint.position, spawnPoint.rotation);
 
+                yield return new WaitForFrames(1);
+                
                 studioCamera.Render();
 
-                yield return new WaitForEndOfFrame();
-
-                Texture2D stamp = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false);
+                var stamp = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false);
                 RenderTexture.active = rt;
                 stamp.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
                 stamp.Apply();
@@ -67,6 +68,7 @@ namespace Setup {
             }
 
             studioCamera.gameObject.SetActive(false);
+            studioLight.gameObject.SetActive(false);
         }
     }
 }

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7205129599525236249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9160028927489033902}
+  - component: {fileID: 2171002914944560157}
+  m_Layer: 0
+  m_Name: LevelUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9160028927489033902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205129599525236249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2171002914944560157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205129599525236249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a08a86c08a342cab76ae4c39915a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.LevelUIManager
+  simulationStartedEvent: {fileID: 11400000, guid: 432110008e38a4bd39a13718dd9e74eb, type: 2}
+  simulationStoppedEvent: {fileID: 11400000, guid: 9948ab1d0c158418189ac84d02e9daec, type: 2}
+  onMagnetDragStateChanged: {fileID: 11400000, guid: b1645411ed34344e8a743e83c57909bb, type: 2}
+  trashStopButtonView: {fileID: 0}
+  trashCanSprite: {fileID: 2071443655879868920, guid: 9a3cb6f6c7a1241be9e1cda777993466, type: 3}
+  stopSimulationSprite: {fileID: -363539770308219252, guid: 74900e5ad099248d28c092416df8d8f2, type: 3}
+  startResetButtonView: {fileID: 0}
+  startSimulationSprite: {fileID: -7032047603049218625, guid: 74900e5ad099248d28c092416df8d8f2, type: 3}
+  resetSimulationSprite: {fileID: 3665019714469203449, guid: 74900e5ad099248d28c092416df8d8f2, type: 3}
+  magnetSpawnViews:
+  - {fileID: 0}
+  - {fileID: 0}
+  activeColor: {r: 1, g: 1, b: 1, a: 1}
+  disabledColor: {r: 0.3, g: 0.3, b: 0.3, a: 0.5}
+  disabledAlpha: 0.4
+  enabledAlpha: 1
