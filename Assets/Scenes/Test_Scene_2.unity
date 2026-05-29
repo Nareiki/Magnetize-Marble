@@ -124,17 +124,6 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 2500934591537416542, guid: 0922c50668973480b87a107c1795da07, type: 3}
   m_PrefabInstance: {fileID: 1620330648473419340}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &14579948 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7389541569082331430, guid: 0922c50668973480b87a107c1795da07, type: 3}
-  m_PrefabInstance: {fileID: 1620330648473419340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
 --- !u!1 &60103008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3051195609426920520, guid: 5c240754985734cadbfa379835734a79, type: 3}
@@ -177,17 +166,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1208536214747847105, guid: 0abe0efa8afacec45b62007f8db8f032, type: 3}
   m_PrefabInstance: {fileID: 5377949639469485195}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &279976340 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6944308317003815101, guid: 0922c50668973480b87a107c1795da07, type: 3}
-  m_PrefabInstance: {fileID: 1620330648473419340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,17 +874,6 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 7384030430172275941, guid: 0922c50668973480b87a107c1795da07, type: 3}
   m_PrefabInstance: {fileID: 1620330648473419340}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &578415745 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3348746898974452935, guid: 0922c50668973480b87a107c1795da07, type: 3}
-  m_PrefabInstance: {fileID: 1620330648473419340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
 --- !u!224 &606438147 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1208536214747847105, guid: 0abe0efa8afacec45b62007f8db8f032, type: 3}
@@ -1339,19 +1306,19 @@ PrefabInstance:
     - target: {fileID: 2171002914944560157, guid: de907ac47ede6457f9b80164635411ee, type: 3}
       propertyPath: trashStopButtonView
       value: 
-      objectReference: {fileID: 1244621733}
+      objectReference: {fileID: 0}
     - target: {fileID: 2171002914944560157, guid: de907ac47ede6457f9b80164635411ee, type: 3}
       propertyPath: startResetButtonView
       value: 
-      objectReference: {fileID: 578415745}
+      objectReference: {fileID: 0}
     - target: {fileID: 2171002914944560157, guid: de907ac47ede6457f9b80164635411ee, type: 3}
       propertyPath: 'magnetSpawnViews.Array.data[0]'
       value: 
-      objectReference: {fileID: 1332020405}
+      objectReference: {fileID: 0}
     - target: {fileID: 2171002914944560157, guid: de907ac47ede6457f9b80164635411ee, type: 3}
       propertyPath: 'magnetSpawnViews.Array.data[1]'
       value: 
-      objectReference: {fileID: 14579948}
+      objectReference: {fileID: 0}
     - target: {fileID: 7205129599525236249, guid: de907ac47ede6457f9b80164635411ee, type: 3}
       propertyPath: m_Name
       value: LevelUIManager
@@ -1903,9 +1870,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Setup.ButtonIconGenerator
   buttonList:
   - prefab: {fileID: 6018767001957401442, guid: 5e2175b5e62ac4c8f9c0437b6785757e, type: 3}
-    uiTarget: {fileID: 279976340}
+    uiTarget: {fileID: 0}
   - prefab: {fileID: 3676642038552113631, guid: 5f7935e06b1484345ab4515456fad92c, type: 3}
-    uiTarget: {fileID: 1512456564}
+    uiTarget: {fileID: 0}
   studioCamera: {fileID: 1736076840}
   studioLight: {fileID: 1184614170}
   spawnPoint: {fileID: 1412529602}
@@ -2064,17 +2031,6 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 8583617752093282324, guid: 0922c50668973480b87a107c1795da07, type: 3}
   m_PrefabInstance: {fileID: 1620330648473419340}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1244621733 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3933261038950982674, guid: 0922c50668973480b87a107c1795da07, type: 3}
-  m_PrefabInstance: {fileID: 1620330648473419340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
 --- !u!1 &1314786249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,17 +2138,6 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 6448805821578053615, guid: 0922c50668973480b87a107c1795da07, type: 3}
   m_PrefabInstance: {fileID: 1620330648473419340}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1332020405 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1096932020511730208, guid: 0922c50668973480b87a107c1795da07, type: 3}
-  m_PrefabInstance: {fileID: 1620330648473419340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81984a30d75947faa3508b222a78c139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.UIButtonStateView
 --- !u!224 &1347136369 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4158630972530242162, guid: d255bdf763613c54fb9c3294e00d562f, type: 3}
@@ -2277,17 +2222,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7599298806046173432, guid: c5a3ec7e81fdd1044aba081fa32bd61f, type: 3}
   m_PrefabInstance: {fileID: 1208070367595227716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1512456564 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8537528007709427657, guid: 0922c50668973480b87a107c1795da07, type: 3}
-  m_PrefabInstance: {fileID: 1620330648473419340}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
 --- !u!1 &1515396188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4177982374928030468, guid: d731b698f6596754aac8f8629858dcc1, type: 3}
